@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2035
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iAssetTechnicalTest_MVCWebAPI_4Dot5", "iAssetTechnicalTest_MVCWebAPI_4Dot5\iAssetTechnicalTest_MVCWebAPI_4Dot5.csproj", "{9A72F59F-0B75-4DD8-86B3-92ADEB7D092C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iAssetTechnicalTest_MVCWebAPI_4Dot5.Tests", "iAssetTechnicalTest_MVCWebAPI_4Dot5.Tests\iAssetTechnicalTest_MVCWebAPI_4Dot5.Tests.csproj", "{3A4092C8-6768-4A3A-AB37-690797D09F8D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9A72F59F-0B75-4DD8-86B3-92ADEB7D092C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A72F59F-0B75-4DD8-86B3-92ADEB7D092C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A72F59F-0B75-4DD8-86B3-92ADEB7D092C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A72F59F-0B75-4DD8-86B3-92ADEB7D092C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A4092C8-6768-4A3A-AB37-690797D09F8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A4092C8-6768-4A3A-AB37-690797D09F8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A4092C8-6768-4A3A-AB37-690797D09F8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A4092C8-6768-4A3A-AB37-690797D09F8D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2C36AD11-9BE7-4AEC-898B-CC1C6067EDCB}
+	EndGlobalSection
+EndGlobal

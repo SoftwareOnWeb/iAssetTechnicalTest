@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="USStatesAndCities.json"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        //Collection of elements
+
+
+    </script>
+    <script>
+        $(document).ready(function () {
+            bindStates($("#State"));
+            weatherfilter = (function () {
+                return {
+                    Country: "",
+                    City: ""
+                }
+            })()
+
+        });
+    </script>
+    <script>
+        function tree(data) {
+            if (typeof (data) == 'object') {
+                var ul = $('<ul>');
+                for (var i in data) {
+                    ul.append($('<li>').text(i).append(tree(data[i])));
+                }
+                return ul;
+            } else {
+                var textNode = document.createTextNode(' => ' + data);
+                return textNode;
+            }
+        }
+        function bindStates(state) {
+            //var state = $("#State");
+            $.each(USStatesAndCities, function (key, val) {
+                state.append(new Option(key, key));
+            });
+        }
+        function bindCities(state,city) {
+           // $("#City").empty();
+         //   var city = $("#City");
+            city.empty();
+            $.each(USStatesAndCities[state], function (index, value) {
+                city.append(new Option(value, value));
+            });
+        }
+
+        function getWeatherData(country, city) {
+            weatherfilter.Country = country;
+            weatherfilter.City = city;
+
+            $.ajax({
+                type: "GET",
+                url: "http://localhost:64948/api/Weather",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                data: weatherfilter,
+                success: function (data) {
+                    $(document.body).append(tree(data));
+                    console.log(data);
+                }, //End of AJAX Success function
+
+                failure: function (data) {
+                    alert(data.responseText);
+                }, //End of AJAX failure function
+                error: function (data) {
+                    alert(data.responseText);
+                } //End of AJAX error function
+
+            });
+        }
+    </script>
+</head>
+<body>
+    <span id="weatherData">Get Weather Data for US</span>
+    <select name="Country" id="Country">
+        <option value="us">United States</option>
+    </select>
+
+    <select name="State" id="State" onchange='bindCities(this.value,$("#City"));'>
+        <option value="">Select</option>
+    </select>
+    <select name="City" id="City">
+        <option value="">Select</option>
+    </select>
+    <button id="getWeather" onclick='getWeatherData($("#Country").val(), $("#City").val())'>Get weather</button>
+</body>
+</html>
